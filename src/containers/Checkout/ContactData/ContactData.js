@@ -11,6 +11,10 @@ export class ContactData extends Component {
       postalCode: ""
     }
   };
+  orderHandler = event => {
+    event.preventDefault();
+    console.log("orderhandler", this.props.ingredients);
+  };
   render() {
     return (
       <div className={classes.ContactData}>
@@ -40,7 +44,9 @@ export class ContactData extends Component {
             name="postal"
             placeholder="Postal Code"
           />
-          <Button btnType="Success">ORDER</Button>
+          <Button btnType="Success" clicked={this.orderHandler}>
+            ORDER
+          </Button>
         </form>
       </div>
     );
